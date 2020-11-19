@@ -16,13 +16,14 @@ void handleOption(string); //function prototype
 void hsubOption(string);
 void showMenu();
 void showSubmenu();
-int divideFormula(int,int);
+double divideFormula(double,double);
+double multiplyFormula(double,double);
 
 //put definitions here
 void handleOption(string userOption)
 {
     //variables
-    int x = 0, y = 0;
+    double x = 0, y = 0;
     string suboption = "";
 
 
@@ -30,20 +31,21 @@ void handleOption(string userOption)
     {
       cout << "\nVelocity = miles/hour\n";
       cout << "\nHow many miles did the car travel?: ";
-      x = validateInt(x); //cin >> miles;
+      x = validateDouble(x); //cin >> miles;
       cout << "\nHow many hours did the car travel for? ";
-      y = validateInt(y); //cin >> hours;
+      y = validateDouble(y); //cin >> hours;
       
       //call the divideFormula function
+      cout << "\n" << x << "/" << y << " = " << divideFormula(x,y) << endl;
       cout << "\nThe velocity of the car is " << divideFormula(x,y) << "." << endl;
     }
     else if(userOption == "B" || userOption == "b")
     {
       cout << "\nAcceleration = velocity/seconds" << endl; 
       cout << "\nWhat is the velocity of the car?: ";
-      x = validateInt(x); //cin >> velocity;
+      x = validateDouble(x); //cin >> velocity;
       cout << "\nHow many seconds did the car travel for? ";
-      y = validateInt(y); //cin >> seconds;
+      y = validateDouble(y); //cin >> seconds;
 
       //call the divideFormula function
       cout << "\nThe acceleration of the car is " << divideFormula(x,y) << "." << endl;
@@ -52,15 +54,22 @@ void handleOption(string userOption)
     {
       
       showSubmenu();
-      cout << "Please select an option: " << endl;
+      cout << "\nPlease select an option: " << endl;
       suboption = validateString(suboption);
       hsubOption(suboption); //call handleOption and pass the user option as an argument
       
     }
     else if(userOption == "D" || userOption == "d")
     { 
-      cout << "\nIt's min/max time ya'll" << endl ;
+      cout << "\nWeight = mass * gravity" << endl ;
+      cout << "\nWhat is the mass of the object? " << endl ;
+      x = validateDouble(x); //cin >> velocity;
+      cout << "\nWhat is the acceleration of gravity? ";
+      y = validateDouble(y); //cin >> seconds;
 
+      //call the divideFormula function
+      cout << "\n" << x << "*" << y << " = " << multiplyFormula(x,y) << endl;
+      cout << "\nThe weight of the object is " << multiplyFormula(x,y) << "." << endl;
     }
     else if(userOption == "E" || userOption == "e")
     { 
@@ -83,11 +92,11 @@ void handleOption(string userOption)
       cout << "\nPlease enter A or B: ";
       answer = validateChar(answer); 
 
-      if(answer == 'A')
+      if(answer == 'A' || answer == 'a')
       {
-        cout << "\nEnd program. Hasta la vista, Baby!!" << endl;
+        cout << "\nGoodnight, until tomorrow~" << endl;
       }
-      else if (answer == 'B')
+      else if (answer == 'B' || answer == 'b')
       {
         cout << "\nGreen Tea" << endl; 
       }
@@ -102,7 +111,7 @@ void handleOption(string userOption)
 void hsubOption(string userOption)
 {
     //variables
-    int x = 0, y = 0;
+    double x = 0, y = 0;
     string suboption = "";
 
 
@@ -110,9 +119,9 @@ void hsubOption(string userOption)
     {
       cout << "\nsolve for v\n";
       cout << "\nHow many miles did the car travel?: ";
-      x = validateInt(x); //cin >> miles;
+      x = validateDouble(x); //cin >> miles;
       cout << "\nHow many hours did the car travel for? ";
-      y = validateInt(y); //cin >> hours;
+      y = validateDouble(y); //cin >> hours;
       
       //call the divideFormula function
       cout << "\nThe velocity of the car is " << divideFormula(x,y) << "." << endl;
@@ -121,9 +130,9 @@ void hsubOption(string userOption)
     {
       cout << "\nAcceleration = velocity/seconds" << endl; 
       cout << "\nWhat is the velocity of the car?: ";
-      x = validateInt(x); //cin >> velocity;
+      x = validateDouble(x); //cin >> velocity;
       cout << "\nHow many seconds did the car travel for? ";
-      y = validateInt(y); //cin >> seconds;
+      y = validateDouble(y); //cin >> seconds;
 
       //call the divideFormula function
       cout << "\nThe acceleration of the car is " << divideFormula(x,y) << "." << endl;
@@ -201,11 +210,18 @@ void showSubmenu()
 }
 //definintion 
 
-int divideFormula(int x,int y)
+double divideFormula(double x,double y)
 {
-  int answer;
+  double answer;
 
   answer = x/y;
+  return answer;
+}
+double multiplyFormula(double x,double y)
+{
+  double answer;
+
+  answer = x*y;
   return answer;
 }
 
