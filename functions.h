@@ -30,24 +30,25 @@ void handleOption(string userOption)
     if(userOption == "A" || userOption == "a")
     {
       cout << "\nVelocity = miles/hour\n";
-      cout << "\nHow many miles did the car travel?: ";
+      cout << "\nHow many miles did the object travel?: ";
       x = validateDouble(x); //cin >> miles;
-      cout << "\nHow many hours did the car travel for? ";
+      cout << "\nHow many hours did the object travel for? ";
       y = validateDouble(y); //cin >> hours;
       
       //call the divideFormula function
       cout << "\n" << x << "/" << y << " = " << divideFormula(x,y) << endl;
-      cout << "\nThe velocity of the car is " << divideFormula(x,y) << "." << endl;
+      cout << "\nThe velocity of the object is " << divideFormula(x,y) << "." << endl;
     }
     else if(userOption == "B" || userOption == "b")
     {
-      cout << "\nAcceleration = velocity/seconds" << endl; 
-      cout << "\nWhat is the velocity of the car?: ";
+      cout << "\nAcceleration = velocity/seconds\n" << endl; 
+      cout << "\nWhat is the velocity of the object?: ";
       x = validateDouble(x); //cin >> velocity;
-      cout << "\nHow many seconds did the car travel for? ";
+      cout << "\nHow many seconds did the object travel for? ";
       y = validateDouble(y); //cin >> seconds;
 
       //call the divideFormula function
+      cout << "\n" << x << "/" << y << " = " << divideFormula(x,y) << endl;
       cout << "\nThe acceleration of the car is " << divideFormula(x,y) << "." << endl;
     }
     else if(userOption == "C" || userOption == "c")//MOTION SUB MENU
@@ -67,14 +68,21 @@ void handleOption(string userOption)
       cout << "\nWhat is the acceleration of gravity? ";
       y = validateDouble(y); //cin >> seconds;
 
-      //call the divideFormula function
+      //call the multiplyFormula function
       cout << "\n" << x << "*" << y << " = " << multiplyFormula(x,y) << endl;
       cout << "\nThe weight of the object is " << multiplyFormula(x,y) << "." << endl;
     }
     else if(userOption == "E" || userOption == "e")
     { 
-      cout << "\nIt's min/max time ya'll" << endl ;
+      cout << "\nMomentum = mass * volume" << endl ;
+      cout << "\nHow many kg does the object weigh? " << endl ;
+      x = validateDouble(x); //cin >> weight;
+      cout << "\nWhat is the volume of the object? ";
+      y = validateDouble(y); //cin >> seconds;
 
+      //call the multiplyFormula function
+      cout << "\n" << x << "*" << y << " = " << multiplyFormula(x,y) << endl;
+      cout << "\nThe momentum of the object is " << multiplyFormula(x,y) << "." << endl;
     }
     else if(userOption == "X" || userOption == "x")
     {
@@ -118,24 +126,24 @@ void hsubOption(string userOption)
     if(userOption == "A" || userOption == "a")
     {
       cout << "\nsolve for v\n";
-      cout << "\nHow many miles did the car travel?: ";
+      cout << "\nHow many miles did the object travel?: ";
       x = validateDouble(x); //cin >> miles;
-      cout << "\nHow many hours did the car travel for? ";
+      cout << "\nHow many hours did the object travel for? ";
       y = validateDouble(y); //cin >> hours;
       
       //call the divideFormula function
-      cout << "\nThe velocity of the car is " << divideFormula(x,y) << "." << endl;
+      cout << "\nThe velocity of the object is " << divideFormula(x,y) << "." << endl;
     }
     else if(userOption == "B" || userOption == "b")
     {
       cout << "\nAcceleration = velocity/seconds" << endl; 
-      cout << "\nWhat is the velocity of the car?: ";
+      cout << "\nWhat is the velocity of the object?: ";
       x = validateDouble(x); //cin >> velocity;
-      cout << "\nHow many seconds did the car travel for? ";
+      cout << "\nHow many seconds did the object travel for? ";
       y = validateDouble(y); //cin >> seconds;
 
       //call the divideFormula function
-      cout << "\nThe acceleration of the car is " << divideFormula(x,y) << "." << endl;
+      cout << "\nThe acceleration of the object is " << divideFormula(x,y) << "." << endl;
     }
     else if(userOption == "C" || userOption == "c")//MOTION SUB MENU
     {
@@ -191,21 +199,22 @@ void hsubOption(string userOption)
 void showMenu()
 {
   cout << "\nPHYSICS CALCULATOR 1.0" << endl; 
-  cout << "A: calculate the velocity of a car" <<endl; 
-  cout << "B: calculate the acceleration of a car" << endl; 
-  cout << "C: calculate motion" << endl; 
+  cout << "A: calculate the velocity of an object" <<endl; 
+  cout << "B: calculate the acceleration of an object" << endl; 
+  cout << "C: calculate the motion of an object" << endl; 
   cout << "D: calculate the weight of an object" << endl; 
-  cout << "E: calculate momentum" << endl; 
+  cout << "E: calculate the momentum of an object" << endl; 
   cout << "F: exit" << endl;
   cout << "X: clear the screen" << endl;  
 }
 void showSubmenu()
 {
   cout << "\nMOTION SUB MENU" << endl; 
-  cout << "A: Ma" <<endl; 
-  cout << "B: ms" << endl; 
-  cout << "C: Mv2" << endl; 
-  cout << "D: mv" << endl;
+  cout << "A: Ma = solve for v" <<endl; 
+  cout << "B: Ms = solve for s" << endl; 
+  cout << "C: Mv2 = solve for v^2" << endl; 
+  cout << "D: Mv = solve for v_bar" << endl;
+  cout << "F: exit" << endl;
   cout << "X: clear the screen" << endl;  
 }
 //definintion 
