@@ -119,7 +119,7 @@ void handleOption(string userOption)
 void hsubOption(string userOption)
 {
     //variables
-    double x = 0, y = 0;
+    double x = 0, y = 0, z = 0;
     string suboption = "";
 
 
@@ -231,6 +231,34 @@ double multiplyFormula(double x,double y)
   double answer;
 
   answer = x*y;
+  return answer;
+}
+double mFormula1(double x,double y,double z)
+{
+  double answer;
+
+  answer = x + (y * z);
+  return answer;
+}
+double mFormula2(double x,double y,double z)
+{
+  double answer;
+
+  answer = x/y;
+  return answer;
+}
+double mFormula3(double x,double y,double z)
+{
+  double answer;
+
+  answer = x/y;
+  return answer;
+}
+double mFormula4(double x,double y,double z)
+{
+  double answer;
+
+  answer = x/y;
   return answer;
 }
 
