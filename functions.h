@@ -1,19 +1,19 @@
 /* A header file to hold the 
 main defintions of the program
-Student: You
+Student: Bryslin Chavous
 Teacher: Dr_T 10-17-2019, updated 3-24-2020 (clear screen methods for Ubuntu)
 */
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
-//put libraries here
+//libraries
 #include <iostream>
 #include<string>
 #include<cmath>
 #include "Input_Validation_Extended.h" 
 using namespace std;
 
-//put prototypes here
-void handleOption(string); //function prototype 
+//function prototypes
+void handleOption(string);
 void hsubOption(string);
 void showMenu();
 void showSubmenu();
@@ -24,7 +24,7 @@ double mFormula2(double,double,double,double);
 double mFormula3(double,double,double,double);
 double mFormula4(double,double);
 
-//put definitions here
+//definitions
 void handleOption(string userOption)
 {
     //variables
@@ -69,9 +69,9 @@ void handleOption(string userOption)
     { 
       cout << "\nWeight = mass * gravity" << endl ;
       cout << "\nWhat is the mass of the object? " << endl ;
-      x = validateDouble(x); //cin >> velocity;
+      x = validateDouble(x); //cin >> mass;
       cout << "\nWhat is the acceleration of gravity? ";
-      y = validateDouble(y); //cin >> seconds;
+      y = validateDouble(y); //cin >> acceleration;
 
       //call the multiplyFormula function
       cout << "\n" << x << "*" << y << " = " << multiplyFormula(x,y) << endl;
@@ -83,7 +83,7 @@ void handleOption(string userOption)
       cout << "\nHow many kg does the object weigh? " << endl ;
       x = validateDouble(x); //cin >> weight;
       cout << "\nWhat is the volume of the object? ";
-      y = validateDouble(y); //cin >> seconds;
+      y = validateDouble(y); //cin >> volume;
 
       //call the multiplyFormula function
       cout << "\n" << x << "*" << y << " = " << multiplyFormula(x,y) << endl;
@@ -136,7 +136,7 @@ void hsubOption(string userOption)
       cout << "\nWhat is the acceleration of the object? ";
       y = validateDouble(y); //cin >> acceleration;
       cout << "\nHow many seconds passsed? ";
-      z = validateDouble(z); //cin >> acceleration;
+      z = validateDouble(z); //cin >> seconds;
       
       //call the mFormula1 function
       cout << "\nMa = " << mFormula1(x,y,z) << endl;
@@ -182,37 +182,6 @@ void hsubOption(string userOption)
       //call the mFormula4 function
       cout << "\nMv = " << mFormula4(x,y) << endl;
     }
-    else if(userOption == "E" || userOption == "e")
-    { 
-      cout << "\nIt's min/max time ya'll" << endl ;
-
-    }
-    else if(userOption == "X" || userOption == "x")
-    {
-      string reset = "\x1b[0m";
-      //Linux Umbunu
-      cout << reset; 
-      cout << "\033[2J\033[1;1H";  //for ubuntu Linux Option 1 of 2
-      //Windows: system("cls"); 
-      system("clear"); //for ubuntu Linux Option 2 of 2
-    }
-    else if(userOption == "F" || userOption == "f")
-    {
-      char answer = '\0';
-
-      cout << "\nPlease enter A or B: ";
-      answer = validateChar(answer); 
-
-      if(answer == 'A')
-      {
-        cout << "\nEnd program. Hasta la vista, Baby!!" << endl;
-      }
-      else if (answer == 'B')
-      {
-        cout << "\nGreen Tea" << endl; 
-      }
-
-    }
     else
     {
       cout << "\nInvalid input: try again." << endl; 
@@ -237,11 +206,9 @@ void showSubmenu()
   cout << "B: Ms = solve for displacement" << endl; 
   cout << "C: Mv2 = solve for v^2" << endl; 
   cout << "D: Mv = solve for v_bar" << endl;
-  cout << "F: exit" << endl;
-  cout << "X: clear the screen" << endl;  
 }
-//definintion 
 
+//definintions
 double divideFormula(double x,double y)
 {
   double answer;
