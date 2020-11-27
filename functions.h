@@ -7,6 +7,7 @@ Teacher: Dr_T 10-17-2019, updated 3-24-2020 (clear screen methods for Ubuntu)
 #define FUNCTIONS_H
 //libraries
 #include <iostream>
+#include <iomanip>
 #include<string>
 #include<cmath>
 #include "Input_Validation_Extended.h" 
@@ -41,8 +42,8 @@ void handleOption(string userOption)
       y = validateDouble(y); //cin >> hours;
       
       //call the divideFormula function
-      cout << "\n" << x << "/" << y << " = " << divideFormula(x,y) << endl;
-      cout << "\nThe velocity of the object is " << divideFormula(x,y) << "." << endl;
+      cout << setprecision(4) << "\n" << x << "/" << y << " = " << divideFormula(x,y) << endl;
+      cout << setprecision(4) << "\nThe velocity of the object is " << divideFormula(x,y) << "." << endl;
     }
     else if(userOption == "B" || userOption == "b")
     {
@@ -53,8 +54,8 @@ void handleOption(string userOption)
       y = validateDouble(y); //cin >> seconds;
 
       //call the divideFormula function
-      cout << "\n" << x << "/" << y << " = " << divideFormula(x,y) << endl;
-      cout << "\nThe acceleration of the car is " << divideFormula(x,y) << "." << endl;
+      cout << setprecision(4) << "\n" << x << "/" << y << " = " << divideFormula(x,y) << endl;
+      cout << setprecision(4) << "\nThe acceleration of the car is " << divideFormula(x,y) << "." << endl;
     }
     else if(userOption == "C" || userOption == "c")//MOTION SUB MENU
     {
@@ -74,8 +75,8 @@ void handleOption(string userOption)
       y = validateDouble(y); //cin >> acceleration;
 
       //call the multiplyFormula function
-      cout << "\n" << x << "*" << y << " = " << multiplyFormula(x,y) << endl;
-      cout << "\nThe weight of the object is " << multiplyFormula(x,y) << "." << endl;
+      cout << setprecision(4) << "\n" << x << "*" << y << " = " << multiplyFormula(x,y) << endl;
+      cout << setprecision(4) << "\nThe weight of the object is " << multiplyFormula(x,y) << "." << endl;
     }
     else if(userOption == "E" || userOption == "e")
     { 
@@ -86,8 +87,8 @@ void handleOption(string userOption)
       y = validateDouble(y); //cin >> volume;
 
       //call the multiplyFormula function
-      cout << "\n" << x << "*" << y << " = " << multiplyFormula(x,y) << endl;
-      cout << "\nThe momentum of the object is " << multiplyFormula(x,y) << "." << endl;
+      cout << setprecision(4) << "\n" << x << "*" << y << " = " << multiplyFormula(x,y) << endl;
+      cout << setprecision(4) << "\nThe momentum of the object is " << multiplyFormula(x,y) << "." << endl;
     }
     else if(userOption == "X" || userOption == "x")
     {
@@ -139,7 +140,7 @@ void hsubOption(string userOption)
       z = validateDouble(z); //cin >> seconds;
       
       //call the mFormula1 function
-      cout << "\nMa = " << mFormula1(x,y,z) << endl;
+      cout << setprecision(4) << "\nMa = " << mFormula1(x,y,z) << endl;
     }
     else if(userOption == "B" || userOption == "b")
     {
@@ -154,7 +155,7 @@ void hsubOption(string userOption)
       w = validateDouble(w); //cin >> acc;
 
       //call the mFormula2 function
-      cout << "\nMs = " << mFormula2(x,y,z,w) << endl;
+      cout << setprecision(4) << "\nMs = " << mFormula2(x,y,z,w) << endl;
     }
     else if(userOption == "C" || userOption == "c")
     {
@@ -169,7 +170,7 @@ void hsubOption(string userOption)
       w = validateDouble(w); //cin >> ipos;
       
       //call the mFormula3 function
-      cout << "\nMv2 = " << mFormula3(x,y,z,w) << endl;
+      cout << setprecision(4) << "\nMv2 = " << mFormula3(x,y,z,w) << endl;
     }
     else if(userOption == "D" || userOption == "d")
     { 
@@ -180,7 +181,7 @@ void hsubOption(string userOption)
       y = validateDouble(y); //cin >> ivel;
 
       //call the mFormula4 function
-      cout << "\nMv = " << mFormula4(x,y) << endl;
+      cout << setprecision(4) << "\nMv = " << mFormula4(x,y) << endl;
     }
     else
     {
