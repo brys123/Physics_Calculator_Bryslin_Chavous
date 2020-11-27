@@ -8,6 +8,7 @@ Teacher: Dr_T 10-17-2019, updated 3-24-2020 (clear screen methods for Ubuntu)
 //put libraries here
 #include <iostream>
 #include<string>
+#include<cmath>
 #include "Input_Validation_Extended.h" 
 using namespace std;
 
@@ -18,6 +19,10 @@ void showMenu();
 void showSubmenu();
 double divideFormula(double,double);
 double multiplyFormula(double,double);
+double mFormula1(double,double,double);
+double mFormula2(double,double,double,double);
+double mFormula3(double,double,double,double);
+double mFormula4(double,double);
 
 //put definitions here
 void handleOption(string userOption)
@@ -106,7 +111,7 @@ void handleOption(string userOption)
       }
       else if (answer == 'B' || answer == 'b')
       {
-        cout << "\nGreen Tea" << endl; 
+        cout << "\nEscape the MATRIX..." << endl; 
       }
 
     }
@@ -119,45 +124,63 @@ void handleOption(string userOption)
 void hsubOption(string userOption)
 {
     //variables
-    double x = 0, y = 0, z = 0;
+    double x = 0, y = 0, z = 0, w = 0;
     string suboption = "";
 
 
     if(userOption == "A" || userOption == "a")
     {
-      cout << "\nsolve for v\n";
-      cout << "\nHow many miles did the object travel?: ";
-      x = validateDouble(x); //cin >> miles;
-      cout << "\nHow many hours did the object travel for? ";
-      y = validateDouble(y); //cin >> hours;
+      cout << "\nMa = initial velocity + acceleration * seconds\n";
+      cout << "\nWhat is the initial velocity of the oebject?: ";
+      x = validateDouble(x); //cin >> vel;
+      cout << "\nWhat is the acceleration of the object? ";
+      y = validateDouble(y); //cin >> acceleration;
+      cout << "\nHow many seconds passsed? ";
+      z = validateDouble(z); //cin >> acceleration;
       
-      //call the divideFormula function
-      cout << "\nThe velocity of the object is " << divideFormula(x,y) << "." << endl;
+      //call the mFormula1 function
+      cout << "\nMa = " << mFormula1(x,y,z) << endl;
     }
     else if(userOption == "B" || userOption == "b")
     {
-      cout << "\nAcceleration = velocity/seconds" << endl; 
-      cout << "\nWhat is the velocity of the object?: ";
-      x = validateDouble(x); //cin >> velocity;
-      cout << "\nHow many seconds did the object travel for? ";
-      y = validateDouble(y); //cin >> seconds;
+      cout << "\nMs = initial position + initial velocity * seconds + 1/2 acceleration * seconds^2" << endl; 
+      cout << "\nWhat is the initial position of the object?: ";
+      x = validateDouble(x); //cin >> ipos;
+      cout << "\nWhat is the initial velocity of the object? ";
+      y = validateDouble(y); //cin >> fvel;
+      cout << "\nHow many seconds passsed? ";
+      z = validateDouble(z); //cin >> secs;
+      cout << "\nWhat is the acceleration of the object? ";
+      w = validateDouble(w); //cin >> acc;
 
-      //call the divideFormula function
-      cout << "\nThe acceleration of the object is " << divideFormula(x,y) << "." << endl;
+      //call the mFormula2 function
+      cout << "\nMs = " << mFormula2(x,y,z,w) << endl;
     }
-    else if(userOption == "C" || userOption == "c")//MOTION SUB MENU
+    else if(userOption == "C" || userOption == "c")
     {
+      cout << "\nMv2 = initial velocity^2 + 2 * acceleration (final position - initial position)" << endl; 
+      cout << "\nWhat is the initial velocity of the object?: ";
+      x = validateDouble(x); //cin >> ivel;
+      cout << "\nWhat is the acceleration of the object? ";
+      y = validateDouble(y); //cin >> acc;
+      cout << "\nWhat is the final position of the object? ";
+      z = validateDouble(z); //cin >> fpos;
+      cout << "\nWhat is the initial position of the object? ";
+      w = validateDouble(w); //cin >> ipos;
       
-      showSubmenu();
-      cout << "Please select an option: " << endl;
-      suboption = validateString(suboption);
-      handleOption(suboption); //call handleOption and pass the user option as an argument
-      
+      //call the mFormula3 function
+      cout << "\nMv2 = " << mFormula3(x,y,z,w) << endl;
     }
     else if(userOption == "D" || userOption == "d")
     { 
-      cout << "\nIt's min/max time ya'll" << endl ;
+      cout << "\nMv = 1/2 (final velocity + initial velocity)" << endl ;
+      cout << "\nWhat is the final velocity of the object?: ";
+      x = validateDouble(x); //cin >> fvel;
+      cout << "\nWhat is the initial velocity of the object? ";
+      y = validateDouble(y); //cin >> ivel;
 
+      //call the mFormula4 function
+      cout << "\nMv = " << mFormula4(x,y) << endl;
     }
     else if(userOption == "E" || userOption == "e")
     { 
@@ -210,8 +233,8 @@ void showMenu()
 void showSubmenu()
 {
   cout << "\nMOTION SUB MENU" << endl; 
-  cout << "A: Ma = solve for v" <<endl; 
-  cout << "B: Ms = solve for s" << endl; 
+  cout << "A: Ma = solve for velocity" <<endl; 
+  cout << "B: Ms = solve for displacement" << endl; 
   cout << "C: Mv2 = solve for v^2" << endl; 
   cout << "D: Mv = solve for v_bar" << endl;
   cout << "F: exit" << endl;
@@ -237,28 +260,28 @@ double mFormula1(double x,double y,double z)
 {
   double answer;
 
-  answer = x + (y * z);
+  answer = x + y * z;
   return answer;
 }
-double mFormula2(double x,double y,double z)
+double mFormula2(double x,double y,double z,double w)
 {
   double answer;
 
-  answer = x/y;
+  answer = x + y * z + (1/2) * w * pow(z, 2);
   return answer;
 }
-double mFormula3(double x,double y,double z)
+double mFormula3(double x,double y,double z,double w)
 {
   double answer;
 
-  answer = x/y;
+  answer = pow(x, 2) + 2 * y * (z - w);
   return answer;
 }
-double mFormula4(double x,double y,double z)
+double mFormula4(double x,double y)
 {
   double answer;
 
-  answer = x/y;
+  answer = 0.5 * (x + y);
   return answer;
 }
 

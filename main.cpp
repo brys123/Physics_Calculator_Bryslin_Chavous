@@ -21,7 +21,7 @@ int main()
     handleOption(option); //call handleOption and pass the user option as an argument
     
   
-  }while(option != "e" && option != "E"); //DeMorgan's Law!!! 
-  cout << "\nGoodbye. Hasta luego." << endl;
+  }while(option != "f" && option != "F"); //DeMorgan's Law!!! 
+  cout << "\nPROGRAM TERMINATED" << endl;
   return 0; 
 }
