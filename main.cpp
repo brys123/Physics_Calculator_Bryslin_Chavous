@@ -1,5 +1,10 @@
-//Practice with Functions Student: yourName, Teacher: Dr_T
-//10-15-2019 updated 10-16-2019 and 3-24-2020
+//Bryslin Chavous
+//Programming C++ II
+//11/29/2020
+//Dr. Tyson McMillan - TCCD
+//Physics calculator
+//I learned how to call header files and implement source code
+
 #include <iostream>
 #include "functions.h" //reference the header file 
  
